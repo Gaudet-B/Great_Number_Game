@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>The Great Number Game</title>
+</head>
+<body class="bg-info p-2 text-dark bg-opacity-25">
+    <div class="container-sm d-flex flex-column justify-content-center align-items-center">
+        <h1>Welcome to the Great Number Game!</h1>
+        <h5>I am thinking of a number between <strong>1</strong> and <strong>100</strong></h5>
+        <h3>Take a guess...</h3>
+        {% if 'result' in session: %}
+        <div class= "d-flex justify-content-center align-items-center border border-primary rounded-3" style="margin: 10px; height: 300px; width: 250px; box-shadow: 1px 1px 5px 3px skyblue;background-color: rgba(128, 0, 0, 0.801);">
+            <h1 class="display-4" style="color: whitesmoke;"> Too {{ session['result'] }}! </h1>
+        </div>
+        {% endif %}
+        <form class="d-inline-flex flex-row input-group mb-3 justify-content-center align-items-center" style="width: fit-content;" style="margin-top: 10px;" method="post" action="/guess">
+            <input class="form-control" type="text" name="input" placeholder="guess here..." style="width: 120px;">
+            <input class="btn btn-outline-secondary" type="submit" id="button-addon2" name="submit" value=" > ">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>The Great Number Game</title>
+</head>
+<body class="bg-info p-2 text-dark bg-opacity-25">
+    <div class="container-sm d-flex flex-column justify-content-center align-items-center">
+        <h1>You Win!</h1>
+        <div class= "d-flex flex-column justify-content-center align-items-center border border-primary rounded-3" style="margin: 10px; height: 300px; width: 250px; box-shadow: 1px 1px 5px 3px skyblue;background-color: rgba(39, 156, 39, 0.829);">
+            <h1 class="display-4" style="text-align: center; color: whitesmoke;"> The number was <strong>{{ session['number'] }}</strong></h1>
+            <form action="/clear_session" method="post">
+                <input class="btn btn-success" style="margin: 10px;" type="submit" name="play_again" value="Play Again!">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
